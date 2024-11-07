@@ -22,4 +22,16 @@ describe('sum', () => {
   it('should return zero when both numbers are zero', () => {
     expect(sum(0, 0)).toBe(0);
   });
+
+  it('should handle very large numbers', () => {
+    expect(sum(1e10, 1e10)).toBe(2e10);
+  });
+
+  it('should handle very small numbers', () => {
+    expect(sum(1e-10, 1e-10)).toBe(2e-10);
+  });
+
+  it('should handle decimal numbers', () => {
+    expect(sum(0.1, 0.2)).toBeCloseTo(0.3, 10);
+  });
 });
