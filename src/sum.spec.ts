@@ -21,4 +21,13 @@ describe('sum', () => {
   it('should return zero when both numbers are zero', () => {
     expect(sum(0, 0)).toBe(0);
   });
+
+  it('should return NaN when one of the inputs is NaN', () => {
+    expect(sum(NaN, 5)).toBeNaN();
+    expect(sum(5, NaN)).toBeNaN();
+  });
+
+  it('should return NaN when both inputs are NaN', () => {
+    expect(sum(NaN, NaN)).toBeNaN();
+  });
 });
